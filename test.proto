@@ -1,0 +1,7 @@
+
+syntax = "proto3";
+package main;
+
+message Login {
+    int64 seed=1;
+}
