@@ -1,6 +1,11 @@
 # RNTcpProtocolBufServer
 React Native 实现TCP连接服务器并使用Protocol buffer收发消息，采用的是go server。使用go模拟的服务器，因为真心快捷好用
 
+Client项目地址:
+```
+https://github.com/tengontheway/ReactNativeTcpProtocolBufClient
+```
+![可被点击的效果](https://raw.githubusercontent.com/tengontheway/RNTcpProtocolBufServer/master/screenshot/111.png)
 
 ## 配置运行
 
