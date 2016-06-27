@@ -46,12 +46,13 @@ func doServerStuff(conn net.Conn) {
 		// MsgLen: 1short = byte(MsgID).length + byte(MsgData).length
 		// MsgID: 1byte MsgID
 		// MsgData: byte[]
-		totalLen := binary.LittleEndian.Uint16(buf[0:2])
-		id := buf[2:3][0]
-		data := buf[3 : totalLen-1]
-
+		totalLen := binary.BigEndian.Uint16(buf[0:2])
 		fmt.Println("TotalLen", totalLen)
+
+		id := binary.BigEndian.Uint16(buf[2:4])
 		fmt.Println("ID", id)
+
+		data := buf[4:totalLen]
 
 		msgLogin := &Login{}
 		err = proto.Unmarshal(data, msgLogin)
